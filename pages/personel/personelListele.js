@@ -25,7 +25,7 @@ function personelListele() {
                 let duzenle = document.createElement("input");
                 duzenle.setAttribute("type", "submit");
                 duzenle.setAttribute("value", "Düzenle");
-                duzenle.setAttribute("onclick", "calisanDuzenle(" + res[i - 1]["id"] + ")")
+                duzenle.setAttribute("onclick", "personelDuzenle(" + res[i - 1]["id"] + ")")
                 duzenle_hucre.appendChild(duzenle);
                 //
 
