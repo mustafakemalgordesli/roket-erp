@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personel Yönetimi</title>
 </head>
 
 <body>
-    personel yönetimi
+    <input type="submit" id="personelEkle" value="Personel Ekle">
+
+    <script>
+        document.getElementById("personelEkle").addEventListener("click", () => {
+            event.preventDefault();
+            location.href = "./personelEkle.html";
+        })
+    </script>
+
 </body>
 
 </html>
