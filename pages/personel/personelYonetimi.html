@@ -10,11 +10,16 @@
 
 <body>
     <input type="submit" id="personelEkle" value="Personel Ekle">
+    <input type="submit" id="personelListele" value="Personel Listele">
 
     <script>
         document.getElementById("personelEkle").addEventListener("click", () => {
             event.preventDefault();
             location.href = "./personelEkle.html";
+        })
+        document.getElementById("personelListele").addEventListener("click", () => {
+            event.preventDefault();
+            location.href = "./personelListele.html";
         })
     </script>
 
