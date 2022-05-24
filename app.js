@@ -1,9 +1,9 @@
 const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
-const connectDb = require('./veritabani-baglanti.js');
+const veritabanıBaglan = require('./veritabani-baglanti.js');
 
-const result = connectDb();
+const result = veritabanıBaglan();
 if(result) {
   console.log("başarısız");
 } else {
