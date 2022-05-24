@@ -10,7 +10,7 @@ if(result) {
   console.log("başarılı");
 }
 
-let win, indexWindow, personelPenceresi;
+let win, indexPenceresi, personelPenceresi, musteriPenceresi, stokPenceresi;
 
 const createWindow = () => {
   win = new BrowserWindow({
@@ -44,13 +44,23 @@ app.on('window-all-closed', () => {
 
 
 ipcMain.on("admin-giris", () => {
-  anaSayfayıOlusur()
+  anaSayfayiOlusur()
   win.hide();
 });
 
 ipcMain.on("personel", () => {
-  personelSayfasınıOlusur()
-  indexWindow.hide();
+  personelSayfasiniOlusur()
+  // indexPenceresi.hide();
+});
+
+ipcMain.on("musteri", () => {
+  musteriSayfasiniOlusur()
+  // indexPenceresi.hide();
+});
+
+ipcMain.on("stok", () => {
+  stokSayfasiniOlusur()
+  // indexPenceresi.hide();
 });
 
 ipcMain.on('auth-failed', () => {
@@ -62,8 +72,8 @@ win.show()
 })
 
 
-function anaSayfayıOlusur() {
-  indexWindow = new BrowserWindow({
+function anaSayfayiOlusur() {
+  indexPenceresi = new BrowserWindow({
     width: 800,
     height: 600,
 
@@ -74,13 +84,13 @@ function anaSayfayıOlusur() {
     },
     autoHideMenuBar: true,
     })
-    indexWindow.loadFile('./pages/index.html')
-    indexWindow.on('close', () => {
-      indexWindow.hide()
+    indexPenceresi.loadFile('./pages/index.html')
+    indexPenceresi.on('close', () => {
+      indexPenceresi.hide()
     })
 }
 
-function personelSayfasınıOlusur() {
+function personelSayfasiniOlusur() {
   personelWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -96,3 +106,34 @@ function personelSayfasınıOlusur() {
     })
 }
 
+function musteriSayfasiniOlusur() {
+  musteriPenceresi = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:false
+    },
+    autoHideMenuBar: true,
+    })
+    musteriPenceresi.loadFile('./pages/musteri/musteriYonetim.html')
+    musteriPenceresi.on('close', () => {
+      musteriPenceresi.hide()
+    })
+}
+
+function stokSayfasiniOlusur() {
+  stokPenceresi = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:false
+    },
+    autoHideMenuBar: true,
+    })
+    stokPenceresi.loadFile('./pages/stok/stokYonetim.html')
+    stokPenceresi.on('close', () => {
+    stokPenceresi.hide()
+    })
+}

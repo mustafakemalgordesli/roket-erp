@@ -10,13 +10,21 @@
 
 <body>
     <button id="personel">Personel</button>
+    <button id="musteri">Müşteri</button>
+    <button id="stok">Stok Takip</button>
 
     <script>
         const {
             ipcRenderer
         } = require('electron')
+        document.getElementById("musteri").addEventListener("click", () => {
+            ipcRenderer.send("musteri");
+        })
         document.getElementById("personel").addEventListener("click", () => {
             ipcRenderer.send("personel");
+        })
+        document.getElementById("stok").addEventListener("click", () => {
+            ipcRenderer.send("stok");
         })
     </script>
 </body>
