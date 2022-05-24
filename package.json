@@ -1,0 +1,16 @@
+{
+  "name": "electron-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^18.2.3",
+    "mysql": "^2.18.1"
+  }
+}
