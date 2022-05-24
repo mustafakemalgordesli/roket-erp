@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
-const connectDb = require('./veritabani-baglanti');
+const connectDb = require('./veritabani-baglanti.js');
 
 const result = connectDb();
 if(result) {

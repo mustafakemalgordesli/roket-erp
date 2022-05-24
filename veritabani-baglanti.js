@@ -6,7 +6,7 @@ const host = "localhost";
 const port = 8111;
 const user = "root";
 const password = "";
-const database = "roket-erp";
+const database = "roketerp";
 
 const connectDb = () => {
     connection = mysql.createConnection({
@@ -18,7 +18,7 @@ const connectDb = () => {
       
     connection.connect(function(err) {
         if (err) return err
-        connection.query("CREATE DATABASE IF NOT EXISTS roket-erp", function (err, result) {
+        connection.query("CREATE DATABASE IF NOT EXISTS roketerp", function (err, result) {
             if (err) return err;
             console.log("Database created");
         });

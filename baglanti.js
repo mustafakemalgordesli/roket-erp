@@ -4,7 +4,7 @@ const host = "localhost";
 const port = 8111;
 const user = "root";
 const password = "";
-const database = "roket-erp";
+const database = "roketerp";
 
 let connection = mysql.createConnection({
     host,
