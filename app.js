@@ -48,7 +48,7 @@ ipcMain.on("login", () => {
   win.hide();
 });
 
-ipcMain.on("login", () => {
+ipcMain.on("personel", () => {
   personelSayfasınıOlusur()
   indexWindow.hide();
 });
