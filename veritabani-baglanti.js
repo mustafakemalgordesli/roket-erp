@@ -3,7 +3,7 @@ const mysql = require('mysql');
 let connection;
 
 const host = "localhost";
-const port = 8111;
+const port = 3306;
 const user = "root";
 const password = "";
 const database = "roketerp";
