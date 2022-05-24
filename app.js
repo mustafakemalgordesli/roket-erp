@@ -10,7 +10,7 @@ if(result) {
   console.log("başarılı");
 }
 
-let win, adminWindow;
+let win, indexWindow, personelPenceresi;
 
 const createWindow = () => {
   win = new BrowserWindow({
@@ -44,8 +44,13 @@ app.on('window-all-closed', () => {
 
 
 ipcMain.on("login", () => {
-  createAdminWindow();
+  anaSayfayıOlusur()
   win.hide();
+});
+
+ipcMain.on("login", () => {
+  personelSayfasınıOlusur()
+  indexWindow.hide();
 });
 
 ipcMain.on('auth-failed', () => {
@@ -57,19 +62,37 @@ win.show()
 })
 
 
-function createAdminWindow() {
-  adminWindow = new BrowserWindow({
+function anaSayfayıOlusur() {
+  indexWindow = new BrowserWindow({
     width: 800,
     height: 600,
+
     webPreferences: {
-      preload: path.join(__dirname, '/preloads/' + 'adminWindow.js')
+      nodeIntegration:true,
+      contextIsolation:false
+     
     },
     autoHideMenuBar: true,
     })
-    adminWindow.loadFile('./pages/adminWindow.html')
-    adminWindow.on('close', () => {
-      adminWindow.hide()
+    indexWindow.loadFile('./pages/index.html')
+    indexWindow.on('close', () => {
+      indexWindow.hide()
     })
 }
 
+function personelSayfasınıOlusur() {
+  personelWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:false
+    },
+    autoHideMenuBar: true,
+    })
+    personelWindow.loadFile('./pages/personel/personelYonetimi.html')
+    personelWindow.on('close', () => {
+      personelWindow.hide()
+    })
+}
 
