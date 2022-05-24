@@ -43,7 +43,7 @@ app.on('window-all-closed', () => {
 
 
 
-ipcMain.on("login", () => {
+ipcMain.on("admin-giris", () => {
   anaSayfayıOlusur()
   win.hide();
 });

@@ -12,6 +12,9 @@
     <button id="personel">Personel</button>
 
     <script>
+        const {
+            ipcRenderer
+        } = require('electron')
         document.getElementById("personel").addEventListener("click", () => {
             ipcRenderer.send("personel");
         })

@@ -44,12 +44,12 @@
                 </div>
                 <form id="loginForm" method="POST">
                     <div class="mb-3 form-group">
-                        <label for="username" class="form-label">Kullanıcı Adı:</label>
-                        <input type="text" class="form-control" id="kullancici_adi" name="username" required />
+                        <label for="kullanici_adi" class="form-label">Kullanıcı Adı:</label>
+                        <input type="text" class="form-control" id="kullanici_adi" name="username" required />
                     </div>
                     <div class="mb-3 form-group">
-                        <label for="password" class="form-label">Şifre:</label>
-                        <input type="password" class="form-control" id="sifre" name="password" required />
+                        <label for="sifre" class="form-label">Şifre:</label>
+                        <input type="password" class="form-control" id="sifre" name="sifre" required />
                     </div>
                     <div class="d-grid">
                         <button id="login" type="submit" class="btn text-light main-bg" form="loginForm">
@@ -63,15 +63,15 @@
 
     <script>
         const usernameInput = document.getElementById("kullanici_adi");
-        const passwordInput = document.getElementById("sifre");
+        const sifre = document.getElementById("sifre");
         const loginButton = document.getElementById("login");
 
         loginButton.addEventListener("click", (event) => {
-            const data = {
+            const veri = {
                 kullanici_adi: usernameInput.value,
-                sifre: passwordInput.value
+                sifre: sifre.value
             };
-            window.myAPI.login(data);
+            window.myAPI.login(veri);
         })
     </script>
 </body>
