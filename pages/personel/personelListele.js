@@ -1,5 +1,5 @@
 var baglanti = require('../../baglanti');
-
+var { yonlendir, yazdir } = require('./personelDuzenle')
 function personelListele() {
     baglanti.connection.query("SELECT * FROM `personel`", (err, res) => {
         if (err) throw err;
@@ -25,7 +25,7 @@ function personelListele() {
                 let duzenle = document.createElement("input");
                 duzenle.setAttribute("type", "submit");
                 duzenle.setAttribute("value", "Düzenle");
-                duzenle.setAttribute("onclick", "personelDuzenle(" + res[i - 1]["id"] + ")")
+                duzenle.setAttribute("onclick", "yazdir(" + res[i - 1]["id"] + ")")
                 duzenle_hucre.appendChild(duzenle);
                 //
 

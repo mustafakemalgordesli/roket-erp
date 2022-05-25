@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Düzenle</title>
+    <script src="./personelDuzenle.js"></script>
+</head>
+
+<body>
+    <div class="formDiv">
+        ÇALIŞAN EKLE
+        <hr>
+        <form class="center" id="ekleme-formu">
+            <input type="text" id="kullanici_adi" placeholder="Kullanıcı Adı">
+            <input type="text" id="bolum" placeholder="Bölüm">
+            <hr>
+            <input type="text" placeholder="Ad" id="ad">
+            <input type="text" placeholder="Soyad" id="soyad">
+            <hr>
+            <input type="text" placeholder="Telefon" id="tel">
+            <input type="number" placeholder="TC" id="tc">
+            <hr>
+            <textarea name="adres" id="adres" cols="70" rows="10">Adres...</textarea><br>
+            <input type="mail" placeholder="Mail" id="mail">
+            <hr>
+            Medeni Durum:
+            <select name="medeni_durum" id="medeni_durum">
+                <option value="Evli">Evli</option>
+                <option value="Bekar">Bekar</option>
+                <option value="Boşanmış">Boşanmış</option>
+            </select>
+            <hr>
+            Doğum Tarihi:
+            <input type="date" placeholder="Doğum tarihi" id="dogum_tarihi">
+            <hr>
+            Giriş Tarihi:
+            <input type="date" placeholder="Giriş tarihi" id="giris_tarihi">
+            <hr>
+            Çıkış Tarihi:
+            <input type="date" placeholder="Çıkış tarihi" id="cikis_tarihi">
+            <hr>
+            Askerlik Durumu
+            <select name="askerlik_durum" id="askerlik_durum">
+                <option value="Yapıldı">Yapıldı</option>
+                <option value="Tecilli">Tecilli</option>
+                <option value="Muaf">Muaf</option>
+            </select>
+            <hr>
+            <textarea name="ozel_durum" id="ozel_durum" cols="70" rows="10">Özel durum varsa buraya yazın...
+        </textarea>
+            <hr>Cinsiyet:
+            <select name="cinsiyet" id="cinsiyet">
+                <option value="Kadın">Kadın</option>
+                <option value="Erkek">Erkek</option>
+            </select>
+            <hr>
+            <input type="submit" id="kaydet" value="Kaydet"><br>
+        </form>
+
+    </div>
+</body>
+
+</html>
