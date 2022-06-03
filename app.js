@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
+const { create } = require('domain');
 
 const result = veritabanıBaglan();
 if(result) {
@@ -41,7 +42,10 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
-
+ipcMain.on("cikis", () => {
+  createWindow()
+  indexPenceresi.hide();
+});
 
 ipcMain.on("admin-giris", () => {
   anaSayfayiOlusur()
@@ -59,7 +63,7 @@ ipcMain.on("musteri", () => {
 });
 
 ipcMain.on("stok", () => {
-  stokSayfasiniOlusur()
+  stokSayfasiniOlusur();
   // indexPenceresi.hide();
 });
 
