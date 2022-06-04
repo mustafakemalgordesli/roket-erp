@@ -10,12 +10,19 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
+    <style>
+        .butonlar {
+            margin-top: 5%;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="submit" id="personelEkle" value="Personel Ekle">
-    <input type="submit" id="personelListele" value="Personel Listele">
-    <canvas id="bolumPersonel" style="width:30%;max-width:600px"></canvas>
+    <div class="d-flex justify-content-around butonlar">
+        <input type="submit" id="personelEkle" value="Personel Ekle">
+        <input type="submit" id="personelListele" value="Personel Listele">
+    </div>
+    <canvas id="bolumPersonel" style="margin-top: 5%; margin-left: 10%;width:30%;max-width:600px;"></canvas>
     <script>
         var baglanti = require('../../baglanti');
         var xValues = [];

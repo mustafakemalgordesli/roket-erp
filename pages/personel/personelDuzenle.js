@@ -2,7 +2,6 @@ var baglanti = require('../../baglanti')
 function duzenleSayfa(id) {
     location.href = "./personelDuzenle.html";
     setTimeout(() => {
-        console.log(id)
         let kullanici_adi = document.getElementById("kullanici_adi");
         let bolum = document.getElementById("bolum");
         let ad = document.getElementById("ad");
