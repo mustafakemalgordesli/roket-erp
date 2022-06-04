@@ -21,6 +21,7 @@
     <div class="d-flex justify-content-around butonlar">
         <input type="submit" id="personelEkle" value="Personel Ekle">
         <input type="submit" id="personelListele" value="Personel Listele">
+        <input type="submit" id="personelDuzenle" value="Personel Düzenle">
     </div>
     <canvas id="bolumPersonel" style="margin-top: 5%; margin-left: 10%;width:30%;max-width:600px;"></canvas>
     <script>
@@ -69,6 +70,10 @@
         document.getElementById("personelListele").addEventListener("click", () => {
             event.preventDefault();
             location.href = "./personelListele.html";
+        })
+        document.getElementById("personelDuzenle").addEventListener("click", (event) => {
+            event.preventDefault();
+            location.href = "./personelDuzenle.html";
         })
     </script>
 
