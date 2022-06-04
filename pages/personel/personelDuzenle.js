@@ -1,50 +1,39 @@
 var baglanti = require('../../baglanti')
-function yonlendir(id) {
-    return new Promise(resolve => {
-        location.href = "./personelDuzenle.html";
-        resolve(id);
-    })
+function duzenleSayfa(id) {
+    location.href = "./personelDuzenle.html";
+    setTimeout(() => {
+        console.log(id)
+        let kullanici_adi = document.getElementById("kullanici_adi");
+        let bolum = document.getElementById("bolum");
+        let ad = document.getElementById("ad");
+        let soyad = document.getElementById("soyad");
+        let tel = document.getElementById("tel");
+        let tc = document.getElementById("tc");
+        let adres = document.getElementById("adres");
+        let mail = document.getElementById("mail");
+        let medeni_durum = document.getElementById("medeni_durum");
+        let medeni = medeni_durum.options[medeni_durum.selectedIndex];
+        let dogum_tarihi = document.getElementById("dogum_tarihi");
+        let giris_tarihi = document.getElementById("giris_tarihi");
+        let cikis_tarihi = document.getElementById("cikis_tarihi");
+        let askerlik_durumu = document.getElementById("askerlik_durum");
+        let askerlik = askerlik_durumu.options[askerlik_durumu.selectedIndex];
+        let ozel_durum = document.getElementById("ozel_durum");
+        let cinsiyet = document.getElementById("cinsiyet");
+        let cins = cinsiyet.options[cinsiyet.selectedIndex];
+        baglanti.connection.query("SELECT * FROM personel WHERE id= " + id, (err, res) => {
+            if (err) throw err;
+            if (res > 0) {
+                kullanici_adi.value = res[0]['kullanici_adi'];
+            }
+            else {
+                console.log("Personel bulunamadı");
+            }
+        })
+
+    }, 3000);
 }
-async function yazdir(id) {
-    await yonlendir(id);
-    var sonuc = []
-    baglanti.connection.query("SELECT * FROM personel WHERE id= " + id, (err, res) => {
-        if (err) throw err;
-        if (res.length > 0) {
-            sonuc = res;
-        }
-    })
-    var kullanici_adi = document.getElementById("kullanici_adi")
-    kullanici_adi.setAttribute("value", sonuc[0]['kullanici_adi'])
-    var bolum = document.getElementById("bolum")
-    bolum.setAttribute("value", sonuc[0]['bolum'])
-    var ad = document.getElementById("ad")
-    ad.setAttribute("value", sonuc[0]['ad'])
-    var soyad = document.getElementById("soyad")
-    soyad.setAttribute("value", sonuc[0]['soyad'])
-    var tel = document.getElementById("tel")
-    tel.setAttribute("value", sonuc[0]['tel'])
-    var tc = document.getElementById("tc")
-    tc.setAttribute("value", sonuc[0]['tc'])
-    var adres = document.getElementById("adres")
-    adres.setAttribute("value", sonuc[0]['adres'])
-    var mail = document.getElementById("mail")
-    mail.setAttribute("value", sonuc[0]['mail'])
-    var medeni_durum = document.getElementById("medeni_durum")
-    medeni_durum.setAttribute("value", sonuc[0]['medeni_durum'])
-    var dogum_tarihi = document.getElementById("dogum_tarihi")
-    dogum_tarihi.setAttribute("value", sonuc[0]['dogum_tarihi'])
-    var giris_tarihi = document.getElementById("giris_tarihi")
-    giris_tarihi.setAttribute("value", sonuc[0]['giris_tarihi'])
-    var cikis_tarihi = document.getElementById("cikis_tarihi")
-    cikis_tarihi.setAttribute("value", sonuc[0]['cikis_tarihi'])
-    var askerlik_durumu = document.getElementById("askerlik_durumu")
-    askerlik_durumu.setAttribute("value", sonuc[0]['askerlik_durumu'])
-    var ozel_durum = document.getElementById("ozel_durum")
-    ozel_durum.setAttribute("value", sonuc[0]['ozel_durum'])
-    var cinsiyet = document.getElementById("cinsiyet")
-    cinsiyet.setAttribute("value", sonuc[0]['cinsiyet'])
-}
+
 module.exports = {
-    yonlendir, yazdir
+    duzenleSayfa
 }

@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
 
 const result = veritabanıBaglan();
-if(result) {
+if (result) {
   console.log("başarısız");
 } else {
   console.log("başarılı");
@@ -64,11 +64,11 @@ ipcMain.on("stok", () => {
 });
 
 ipcMain.on('auth-failed', () => {
-  new Notification({ title: "Giriş Başarısız!", silent : false}).show()
+  new Notification({ title: "Giriş Başarısız!", silent: false }).show()
 })
 
 ipcMain.on('activate', () => {
-win.show()
+  win.show()
 })
 
 
@@ -78,16 +78,16 @@ function anaSayfayiOlusur() {
     height: 600,
 
     webPreferences: {
-      nodeIntegration:true,
-      contextIsolation:false
-     
+      nodeIntegration: true,
+      contextIsolation: false
+
     },
     autoHideMenuBar: true,
-    })
-    indexPenceresi.loadFile('./pages/index.html')
-    indexPenceresi.on('close', () => {
-      indexPenceresi.hide()
-    })
+  })
+  indexPenceresi.loadFile('./pages/index.html')
+  indexPenceresi.on('close', () => {
+    indexPenceresi.hide()
+  })
 }
 
 function personelSayfasiniOlusur() {
@@ -95,15 +95,15 @@ function personelSayfasiniOlusur() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration:true,
-      contextIsolation:false
+      nodeIntegration: true,
+      contextIsolation: false
     },
     autoHideMenuBar: true,
-    })
-    personelWindow.loadFile('./pages/personel/personelYonetimi.html')
-    personelWindow.on('close', () => {
-      personelWindow.hide()
-    })
+  })
+  personelWindow.loadFile('./pages/personel/personelYonetimi.html')
+  personelWindow.on('close', () => {
+    personelWindow.hide()
+  })
 }
 
 function musteriSayfasiniOlusur() {
@@ -111,15 +111,15 @@ function musteriSayfasiniOlusur() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration:true,
-      contextIsolation:false
+      nodeIntegration: true,
+      contextIsolation: false
     },
     autoHideMenuBar: true,
-    })
-    musteriPenceresi.loadFile('./pages/musteri/musteriYonetim.html')
-    musteriPenceresi.on('close', () => {
-      musteriPenceresi.hide()
-    })
+  })
+  musteriPenceresi.loadFile('./pages/musteri/musteriYonetim.html')
+  musteriPenceresi.on('close', () => {
+    musteriPenceresi.hide()
+  })
 }
 
 function stokSayfasiniOlusur() {
@@ -127,13 +127,13 @@ function stokSayfasiniOlusur() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration:true,
-      contextIsolation:false
+      nodeIntegration: true,
+      contextIsolation: false
     },
     autoHideMenuBar: true,
-    })
-    stokPenceresi.loadFile('./pages/stok/stokYonetim.html')
-    stokPenceresi.on('close', () => {
+  })
+  stokPenceresi.loadFile('./pages/stok/stokYonetim.html')
+  stokPenceresi.on('close', () => {
     stokPenceresi.hide()
-    })
+  })
 }
