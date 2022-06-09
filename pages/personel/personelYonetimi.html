@@ -35,7 +35,7 @@
                 for (i = 0; i < res.length; i++) {
                     if (xValues.indexOf(res[i]['bolum']) == -1) {
                         xValues.push(res[i]['bolum'])
-                        yValues.push(1);
+                        yValues.push(0);
                     }
                     yValues[xValues.indexOf(res[i]['bolum'])] += 1
                 }
