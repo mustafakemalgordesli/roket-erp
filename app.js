@@ -78,8 +78,10 @@ win.show()
 
 function anaSayfayiOlusur() {
   indexPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
 
     webPreferences: {
       nodeIntegration:true,
@@ -96,8 +98,10 @@ function anaSayfayiOlusur() {
 
 function personelSayfasiniOlusur() {
   personelWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration:true,
       contextIsolation:false
@@ -112,8 +116,10 @@ function personelSayfasiniOlusur() {
 
 function musteriSayfasiniOlusur() {
   musteriPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration:true,
       contextIsolation:false
@@ -128,8 +134,10 @@ function musteriSayfasiniOlusur() {
 
 function stokSayfasiniOlusur() {
   stokPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration:true,
       contextIsolation:false
