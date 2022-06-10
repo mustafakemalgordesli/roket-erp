@@ -64,12 +64,9 @@
             let id = document.getElementsByClassName("sec")[0].value;
             baglanti.connection.query("UPDATE `personel` SET `ad` = '" + ad.value + "', `soyad` = '" + soyad.value + "', `tel` = '" + tel.value + "', `tc` = '" + tc.value + "', `adres` = '" + adres.value + "', `mail` = '" + mail.value + "', `kullanici_adi` = '" + kullanici_adi.value + "', `askerlik_durum` = '" + askerlik_durumu.options[askerlik_durumu.selectedIndex].value + "', `ozel_durum` = '" + ozel_durum.value + "', `cinsiyet` = '" + cinsiyet.options[cinsiyet.selectedIndex].value + "', `bolum` = '" + bolum.value + "' WHERE `personel`.`id` = " + id + ";", (err, res) => {
                 if (err) throw err;
-                console.log("Güncellendi")
+                console.log("Güncellendi");
             })
         })
-        function tarihDonustur(tarih) {
-            console.log(tarih);
-        }
         let kullanici_adi = document.getElementById("kullanici_adi");
         let bolum = document.getElementById("bolum");
         let ad = document.getElementById("ad");
