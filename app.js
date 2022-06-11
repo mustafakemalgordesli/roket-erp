@@ -67,6 +67,15 @@ ipcMain.on("stok", () => {
   // indexPenceresi.hide();
 });
 
+ipcMain.on("veriYolla",(event,arg)=>{
+  sonuc=arg;
+  console.log(sonuc+" veriyolla")
+})
+ipcMain.on("veriCek",(event,arg)=>{
+  console.log(sonuc[0])
+  event.reply("veriCek",sonuc)
+})
+
 ipcMain.on('auth-failed', () => {
   new Notification({ title: "Giriş Başarısız!", silent : false}).show()
 })

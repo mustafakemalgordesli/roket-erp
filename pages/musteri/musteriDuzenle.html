@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Düzenle</title>
+    <script src="./musteriDuzenle.js"></script>
+</head>
+
+<body>
+    <div class="formDiv">
+        Müşteri Düzenle
+        <hr>Düzenlenecek müşterinin ID'sini girin<br>
+        <br>
+        <input list="brow" class="sec">
+        <datalist id="brow">
+
+        </datalist>
+        <input type="submit" id="bilgileriGetir">
+        <hr>
+        <form class="center" id="ekleme-formu">
+            <input type="number" id="ID" placeholder="ID">
+            <hr>
+            <input type="text" placeholder="Ad" id="ad">
+            <input type="text" placeholder="Soyad" id="soyad">
+            <input type="text" placeholder="Firma Adı" id="firma_ad">
+            <hr>
+            <input type="text" placeholder="Telefon1" id="tel1">
+            <input type="text" placeholder="Telefon2" id="tel2">
+            <hr>
+            <input type="mail" placeholder="Mail1" id="mail1">
+            <input type="mail" placeholder="Mail2" id="mail2">
+            <hr>
+            <textarea name="adres1" id="adres1" cols="70" rows="10">Adres...</textarea><br>
+            <textarea name="adres2" id="adres2" cols="70" rows="10">Adres...</textarea><br>
+            <hr>
+            <textarea name="aciklama1" id="aciklama1" cols="70" rows="10">Açıklama...</textarea><br>
+            <textarea name="aciklama2" id="aciklama2" cols="70" rows="10">Açıklama...</textarea><br>
+            <textarea name="aciklama3" id="aciklama3" cols="70" rows="10">Açıklama...</textarea><br>
+            <hr>
+            <input type="number" placeholder="VergiNo" id="vergi_no">
+            <input type="number" placeholder="IBAN" id="iban">
+            <hr>
+            <textarea name="ozel_durum" id="ozel_durum" cols="70" rows="10">Özel durum varsa buraya yazın...
+        </textarea>
+    
+            <input type="submit" id="kaydet" value="Kaydet"><br>
+        </form>
+    </div>
+    <script>
+        document.getElementById("kaydet").addEventListener("click", (event) => {
+            event.preventDefault();
+            let id = document.getElementsByClassName("sec")[0].value;
+            baglanti.connection.query("UPDATE `musteri` SET `ID` = '" + id.value + "', `ad` = '" + ad.value + "', `soyad` = '" + soyad.value + "', `firma_ad` = '" + firma_ad.value + "', `tel1` = '" + tel1.value + "', `tel2` = '" + tel2.value + "', `mail1` = '" + mail1.value + "', `mail2` = '" + mail2.value + "', `adres1` = '" + adres1.value + "', `adres2` = '" + adres2.value + "', `aciklama1` = '" + aciklama1.value + "', `aciklama2` = '" + aciklama2.value + "', `aciklama3` = '" + aciklama3.value + "', `vergi_no` = '" + vergi_no.value + "', `iban` = '" + iban.value + "',`ozel_durum` = '" + ozel_durum.value + "' WHERE `musteri`.`id` = " + id + ";", (err, res) => {
+                if (err) throw err;
+                console.log("Güncellendi");
+            })
+        })
+        let id = document.getElementById("ID");
+        let ad = document.getElementById("ad");
+        let soyad = document.getElementById("soyad");
+        let firma_ad = document.getElementById("firma_ad");
+        let tel1 = document.getElementById("tel1");
+        let tel2 = document.getElementById("tel2");
+        let mail1 = document.getElementById("mail1");
+        let mail2 = document.getElementById("mail2");
+        let adres1 = document.getElementById("adres1");
+        let adres2 = document.getElementById("adres2");
+        let aciklama1 = document.getElementById("aciklama1");
+        let aciklama2 = document.getElementById("aciklama2");
+        let aciklama3 = document.getElementById("aciklama3");
+        let vergi_no = document.getElementById("vergi_no");
+        let iban = document.getElementById("iban");
+        let ozel_durum = document.getElementById("ozel_durum");
+        document.getElementById("bilgileriGetir").addEventListener("click", (event) => {
+            event.preventDefault();
+            let id = document.getElementsByClassName("sec")[0].value;
+            baglanti.connection.query("SELECT * FROM musteri WHERE id= " + id, (err, res) => {
+                id.value = res[0]['ID'];
+                ad.value = res[0]['ad'];
+                soyad.value = res[0]['soyad'];
+                firma_ad.value = res[0]['firma_ad'];
+                tel1.value = res[0]['tel1'];
+                tel2.value = res[0]['tel2'];
+                mail1.value = res[0]['mail1'];
+                mail2.value = res[0]['mail2'];
+                adres1.value = res[0]['adres1'];
+                adres2.value = res[0]['adres2'];
+                aciklama1.value = res[0]['aciklama1'];
+                aciklama2.value = res[0]['aciklama2'];
+                aciklama3.value = res[0]['aciklama3'];
+                vergi_no.value = res[0]['vergi_no'];
+                iban.value = res[0]['iban'];
+                ozel_durum.value = res[0]['ozel_durum'];
+
+            })
+
+        })
+        baglanti.connection.query("SELECT * FROM musteri", (err, res) => {
+            if (err) throw err;
+            let dtList = document.getElementsByTagName("datalist")[0];
+            for (i = 0; i < res.length; i++) {
+                dtList.innerHTML += "<option value='" + res[i]['ID'] + "'>" + res[i]['ad'] + " " + res[i]['soyad'] + "</option>";
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
