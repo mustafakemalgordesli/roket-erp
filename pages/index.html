@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yönetim Paneli</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <button id="personel">Personel</button>
     <button id="musteri">Müşteri</button>
     <button id="stok">Stok Takip</button>
+    <button id="cikis">Çıkış Yap</button>
 
     <script>
         const {
@@ -25,6 +27,9 @@
         })
         document.getElementById("stok").addEventListener("click", () => {
             ipcRenderer.send("stok");
+        })
+        document.getElementById("cikis").addEventListener("click", () => {
+            ipcRenderer.send("cikis");
         })
     </script>
 </body>

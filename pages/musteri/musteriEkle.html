@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Ekle</title>
+    <script src="./musteriEkle.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .formDiv {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="formDiv">
+        MÜŞTERİ EKLE
+        <hr>
+        <form class="center" id="ekleme-formu">
+            <input type="text" placeholder="Ad" id="ad">
+            <input type="text" placeholder="Soyad" id="soyad">
+            <input type="text" placeholder="Firma Adı" id="firma_ad">
+            <hr>
+            <input type="text" placeholder="Telefon1" id="tel1">
+            <input type="text" placeholder="Telefon2" id="tel2">
+            <hr>
+            <input type="mail" placeholder="Mail1" id="mail1">
+            <input type="mail" placeholder="Mail2" id="mail2">
+            <hr>
+            <textarea name="adres1" id="adres1" cols="70" rows="10">Adres...</textarea><br>
+            <textarea name="adres2" id="adres2" cols="70" rows="10">Adres...</textarea><br>
+            <textarea name="aciklama1" id="aciklama1" cols="70" rows="10">Açıklama...</textarea><br>
+            <textarea name="aciklama2" id="aciklama2" cols="70" rows="10">Açıklama...</textarea><br>
+            <textarea name="aciklama3" id="aciklama3" cols="70" rows="10">Açıklama...</textarea><br>
+            <input type="number" placeholder="VergiNo" id="vergi_no">
+            <input type="number" placeholder="IBAN" id="iban">
+            <hr>
+
+            <input type="submit" id="kaydet" value="Kaydet"><br>
+        </form>
+
+    </div>
+    <script>
+        document.getElementById("kaydet").addEventListener("click", (event) => {
+            event.preventDefault();
+            musteriEkle();
+        })
+    </script>
+
+</body>
+
+</html>

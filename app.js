@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
+const { create } = require('domain');
 
 const result = veritabanıBaglan();
 if (result) {
@@ -41,7 +42,10 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
-
+ipcMain.on("cikis", () => {
+  createWindow()
+  indexPenceresi.hide();
+});
 
 ipcMain.on("admin-giris", () => {
   anaSayfayiOlusur()
@@ -59,9 +63,18 @@ ipcMain.on("musteri", () => {
 });
 
 ipcMain.on("stok", () => {
-  stokSayfasiniOlusur()
+  stokSayfasiniOlusur();
   // indexPenceresi.hide();
 });
+
+ipcMain.on("veriYolla",(event,arg)=>{
+  sonuc=arg;
+  console.log(sonuc+" veriyolla")
+})
+ipcMain.on("veriCek",(event,arg)=>{
+  console.log(sonuc[0])
+  event.reply("veriCek",sonuc)
+})
 
 ipcMain.on('auth-failed', () => {
   new Notification({ title: "Giriş Başarısız!", silent: false }).show()
@@ -74,8 +87,10 @@ ipcMain.on('activate', () => {
 
 function anaSayfayiOlusur() {
   indexPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
 
     webPreferences: {
       nodeIntegration: true,
@@ -92,8 +107,10 @@ function anaSayfayiOlusur() {
 
 function personelSayfasiniOlusur() {
   personelWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -108,8 +125,10 @@ function personelSayfasiniOlusur() {
 
 function musteriSayfasiniOlusur() {
   musteriPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -124,8 +143,10 @@ function musteriSayfasiniOlusur() {
 
 function stokSayfasiniOlusur() {
   stokPenceresi = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height: 715,
+    width: 1200,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
