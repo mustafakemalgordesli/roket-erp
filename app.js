@@ -103,10 +103,11 @@ function anaSayfayiOlusur() {
     indexPenceresi.on('close', () => {
       indexPenceresi.hide()
     })
+    indexPenceresi.maximize();
 }
 
 function personelSayfasiniOlusur() {
-  personelWindow = new BrowserWindow({
+  personelPenceresi = new BrowserWindow({
     height: 715,
     width: 1200,
     minWidth: 800,
@@ -117,10 +118,11 @@ function personelSayfasiniOlusur() {
     },
     autoHideMenuBar: true,
     })
-    personelWindow.loadFile('./pages/personel/personelYonetimi.html')
-    personelWindow.on('close', () => {
-      personelWindow.hide()
+    personelPenceresi.loadFile('./pages/personel/personelYonetimi.html')
+    personelPenceresi.on('close', () => {
+      personelPenceresi.hide()
     })
+    personelPenceresi.maximize();
 }
 
 function musteriSayfasiniOlusur() {
@@ -139,6 +141,7 @@ function musteriSayfasiniOlusur() {
     musteriPenceresi.on('close', () => {
       musteriPenceresi.hide()
     })
+    musteriPenceresi.maximize();
 }
 
 function stokSayfasiniOlusur() {
@@ -157,4 +160,5 @@ function stokSayfasiniOlusur() {
     stokPenceresi.on('close', () => {
     stokPenceresi.hide()
     })
+    stokPenceresi.maximize();
 }

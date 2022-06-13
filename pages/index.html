@@ -16,14 +16,14 @@
     <script>
         window.$ = window.jQuery = require('jquery');
     </script>
-    <title>ROKET-ERP SOFTWAR-3</title>
+    <title>ROKET-ERP</title>
 </head>
 
 <body>
     <div class="dashboard-main-wrapper">
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand">ROKETerp</a>
+                <a class="navbar-brand">ROKET-ERP</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -52,12 +52,13 @@
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
                                 aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
-                                    <span class="status"></span><span class="ml-2">Available</span>
+                                    <h5 class="mb-0 text-white nav-user-name">Admin</h5>
+                                    <span class="status"></span><span class="ml-2">Admin</span>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>BİLGİLERİNİZ</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>AYARLAR</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>ÇIKIŞ</a>
+                                <!-- <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>BİLGİLERİNİZ</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>AYARLAR</a> -->
+                                <a id="oturumukapat" class="dropdown-item" href="#"><i
+                                        class="fas fa-power-off mr-2"></i>Çıkış</a>
                             </div>
                         </li>
                     </ul>
@@ -80,15 +81,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-1" aria-controls="submenu-1"><i
-                                        class="fas fa-fw fa-chart-pie"></i>STOK</a>
+                                        class="fas fa-fw fa-chart-pie"></i>Stok</a>
                                 <div id="submenu-1" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" id="stok">Stok yönetim</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="pages/stok/stokEkle">Stok Ekle</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
@@ -101,32 +102,32 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="personel">Personel Yönetim</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="pages/personel/PersonelEkle">Personel Ekle</a>
                                         </li>
 
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/personel/PersonelDuzenle">Personel
                                                 Düzenle</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fas fa-fw fa-chart-pie"></i>musteri</a>
+                                        class="fas fa-fw fa-chart-pie"></i>Müsteri</a>
                                 <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="musteri">musteri Yönetim</a>
+                                            <a class="nav-link" id="musteri">Müsteri Yönetim</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link" href="pages/musteri/musterilEkle">Müsteri Ekle</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/musteri/musterilEkle">musteri Ekle</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/musteri/musteriDuzenle">musteri Düzenle</a>
-                                        </li>
+                                            <a class="nav-link" href="pages/musteri/musteriDuzenle">Müşsteri Düzenle</a>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
@@ -188,6 +189,10 @@
         })
         document.getElementById("stok").addEventListener("click", () => {
             ipcRenderer.send("stok");
+        })
+
+        document.getElementById("oturumukapat").addEventListener("click", () => {
+            ipcRenderer.send("cikis");
         })
     </script>
     <script src="./assets/vendor/jquery/jquery-3.3.1.min.js"></script>

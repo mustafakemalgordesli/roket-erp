@@ -15,8 +15,15 @@ function musteriEkle() {
     let vergi_no = document.getElementById("vergi_no").value;
     let iban = document.getElementById("iban").value;
 
-    baglanti.connection.query("INSERT INTO `musteri` (`id`, `ad`, `soyad`, `firma_ad`, `tel1`, `tel2`, `mail1`, `mail2`, `adres1`, `adres2`, `aciklama1`, `aciklama2`, `aciklama3`, `vergi_no`, `iban`) VALUES (NULL, '" +"', '" + ad + "', '" + soyad + "', '" + firma_ad + "', '" + tel1 + "', '" + tel2 + "', '" + mail1 + "', '" + mail2 + "', '" + adres1 + "', '" + adres2 + "', '" + aciklama1 + "', '" + aciklama2 + "', '" + aciklama3 + "', '" + vergi_no + "', '" + iban + "');", (err, res) => {
-        if (err) throw err;
+
+    
+    var sql = "INSERT INTO `musteri` (`ad`, `soyad`, `firma_ad`, `tel1`, `tel2`, `mail1`, `mail2`, `adres1`, `adres2`, `aciklama1`, `aciklama2`, `aciklama3`, `vergi_no`, `iban`) VALUES ('" + ad + "', '" + soyad + "', '" + firma_ad + "', '" + tel1 + "', '" + tel2 + "', '" + mail1 + "', '" + mail2 + "', '" + adres1 + "', '" + adres2 + "', '" + aciklama1 + "', '" + aciklama2 + "', '" + aciklama3 + "', '" + vergi_no + "', '" + iban + "')";
+    alert(sql)
+    baglanti.connection.query(sql, (err, res) => {
+        if (err){
+            console.log(err)
+            return
+        }
         //Buraya Dialog eklenmeli
         document.getElementById("ekleme-formu").reset();
     })
