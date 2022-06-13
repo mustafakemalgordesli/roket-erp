@@ -20,6 +20,7 @@
     <div class="formDiv">
         ÇALIŞAN EKLE
         <hr>
+        <input type="submit" id="geri" value="Geri dön">
         <form class="center" id="ekleme-formu">
             <input type="text" id="kullanici_adi" placeholder="Kullanıcı Adı">
             <input type="text" id="bolum" placeholder="Bölüm">
@@ -69,6 +70,9 @@
 
     </div>
     <script>
+        document.getElementById("geri").addEventListener("click", (event) => {
+            location.href = "./personelYonetimi.html"
+        })
         document.getElementById("kaydet").addEventListener("click", (event) => {
             event.preventDefault();
             personelEkle();

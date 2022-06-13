@@ -19,6 +19,7 @@
 
         </datalist>
         <input type="submit" id="bilgileriGetir">
+        <input type="submit" id="geri" value="Geri dön">
         <hr>
         <form class="center" id="ekleme-formu">
             <input type="text" id="kullanici_adi" placeholder="Kullanıcı Adı">
@@ -59,6 +60,9 @@
         </form>
     </div>
     <script>
+        document.getElementById("geri").addEventListener("click", (event) => {
+            location.href = "./personelYonetimi.html"
+        })
         document.getElementById("kaydet").addEventListener("click", (event) => {
             event.preventDefault();
             let id = document.getElementsByClassName("sec")[0].value;
