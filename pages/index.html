@@ -85,11 +85,11 @@
                                 <div id="submenu-1" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="stok">Stok yönetim</a>
+                                            <a class="nav-link" href="#" id="stok">Stok Yönetim</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="pages/stok/stokEkle">Stok Ekle</a>
-                                        </li> -->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" id="stokekle">Stok Ekle</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -100,16 +100,16 @@
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="personel">Personel Yönetim</a>
+                                            <a class="nav-link" href="#" id="personel">Personel Yönetim</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="pages/personel/PersonelEkle">Personel Ekle</a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" id="personelekle">Personel Ekle</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/personel/PersonelDuzenle">Personel
+                                            <a class="nav-link" href="#" id="personelduzenle">Personel
                                                 Düzenle</a>
-                                        </li> -->
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -120,14 +120,14 @@
                                 <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="musteri">Müsteri Yönetim</a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="pages/musteri/musterilEkle">Müsteri Ekle</a>
+                                            <a class="nav-link" href="#" id="musteri">Müsteri Yönetim</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/musteri/musteriDuzenle">Müşsteri Düzenle</a>
-                                        </li> -->
+                                            <a class="nav-link" href="#" id="musteriekle">Müsteri Ekle</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" id="musteriduzenle">Müşteri Düzenle</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -193,6 +193,26 @@
 
         document.getElementById("oturumukapat").addEventListener("click", () => {
             ipcRenderer.send("cikis");
+        })
+
+        document.getElementById("stokekle").addEventListener("click", () => {
+            location.href = "./stok/stokEkle.html";
+        })
+
+        document.getElementById("personelekle").addEventListener("click", () => {
+            location.href = "./personel/personelEkle.html";
+        })
+
+        document.getElementById("personelduzenle").addEventListener("click", () => {
+            location.href = "./stok/personelDuzenle.html";
+        })
+
+        document.getElementById("musteriekle").addEventListener("click", () => {
+            location.href = "./musteri/musteriEkle.html";
+        })
+
+        document.getElementById("musteriduzenle").addEventListener("click", () => {
+            location.href = "./musteri/musteriDuzenle.html";
         })
     </script>
     <script src="./assets/vendor/jquery/jquery-3.3.1.min.js"></script>

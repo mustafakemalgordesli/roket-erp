@@ -2,13 +2,10 @@ const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
-const { create } = require('domain');
 
 const result = veritabanıBaglan();
 if(result) {
   console.log("başarısız");
-} else {
-  console.log("başarılı");
 }
 
 let win, indexPenceresi, personelPenceresi, musteriPenceresi, stokPenceresi;
@@ -44,6 +41,9 @@ app.on('window-all-closed', () => {
 
 ipcMain.on("cikis", () => {
   createWindow()
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
   indexPenceresi.hide();
 });
 
@@ -54,17 +54,17 @@ ipcMain.on("admin-giris", () => {
 
 ipcMain.on("personel", () => {
   personelSayfasiniOlusur()
-  // indexPenceresi.hide();
+  indexPenceresi.hide();
 });
 
 ipcMain.on("musteri", () => {
   musteriSayfasiniOlusur()
-  // indexPenceresi.hide();
+  indexPenceresi.hide();
 });
 
 ipcMain.on("stok", () => {
   stokSayfasiniOlusur();
-  // indexPenceresi.hide();
+  indexPenceresi.hide();
 });
 
 ipcMain.on("veriYolla",(event,arg)=>{

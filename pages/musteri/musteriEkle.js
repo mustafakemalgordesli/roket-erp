@@ -26,5 +26,6 @@ function musteriEkle() {
         }
         //Buraya Dialog eklenmeli
         document.getElementById("ekleme-formu").reset();
+        location.href = "./musteriYonetim.html";
     })
 }

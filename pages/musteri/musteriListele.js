@@ -24,8 +24,9 @@ function musteriListele() {
                 let duzenle_hucre = row.insertCell(-1);
                 let duzenle = document.createElement("input");
                 duzenle.setAttribute("type", "submit");
+                duzenle.setAttribute("id", res[i - 1]["id"])
                 duzenle.setAttribute("value", "Düzenle");
-                duzenle.setAttribute("onclick", "musteriDuzenle(" + res[i - 1]["id"] + ")")
+                duzenle.setAttribute("onclick", "musteriDuzenle(this)")
                 duzenle_hucre.appendChild(duzenle);
                 //
 

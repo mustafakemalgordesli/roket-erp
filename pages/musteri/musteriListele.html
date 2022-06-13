@@ -14,8 +14,8 @@
 </head>
 
 <body onload="listele()">
-    MÜŞTERİ LİSTELE <input type="submit" id="listele" value="Listele">
-    <input type="submit" id="geri" value="Geri dön">
+    MÜŞTERİLER
+    <!--<input type="submit" id="listele" value="Listele">-->
     <hr>
     <table id="table" border="1px" style="border-collapse:collapse;">
         <tr>
@@ -36,6 +36,8 @@
             <th>IBAN</th>
         </tr>
     </table>
+    <hr>
+    <input type="submit" id="geri" value="Geri dön">
 
     <script>
         const {
@@ -45,8 +47,10 @@
         function listele() {
             musteriListele();
         }
-        document.getElementById("musteri").addEventListener("click", () => {
-            ipcRenderer.send("musteri");
+
+        document.getElementById("geri").addEventListener("click", () => {
+            console.log("test")
+            location.href = "./musteriYonetim.html";
         })
     </script>
 </body>

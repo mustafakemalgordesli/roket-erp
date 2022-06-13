@@ -21,8 +21,6 @@
         <input type="submit" id="bilgileriGetir">
         <hr>
         <form class="center" id="ekleme-formu">
-            <input type="number" id="ID" placeholder="ID">
-            <hr>
             <input type="text" placeholder="Ad" id="ad">
             <input type="text" placeholder="Soyad" id="soyad">
             <input type="text" placeholder="Firma Adı" id="firma_ad">
@@ -45,7 +43,7 @@
             <hr>
             <textarea name="ozel_durum" id="ozel_durum" cols="70" rows="10">Özel durum varsa buraya yazın...
         </textarea>
-    
+
             <input type="submit" id="kaydet" value="Kaydet"><br>
         </form>
     </div>
@@ -53,10 +51,20 @@
         document.getElementById("kaydet").addEventListener("click", (event) => {
             event.preventDefault();
             let id = document.getElementsByClassName("sec")[0].value;
-            baglanti.connection.query("UPDATE `musteri` SET `ID` = '" + id.value + "', `ad` = '" + ad.value + "', `soyad` = '" + soyad.value + "', `firma_ad` = '" + firma_ad.value + "', `tel1` = '" + tel1.value + "', `tel2` = '" + tel2.value + "', `mail1` = '" + mail1.value + "', `mail2` = '" + mail2.value + "', `adres1` = '" + adres1.value + "', `adres2` = '" + adres2.value + "', `aciklama1` = '" + aciklama1.value + "', `aciklama2` = '" + aciklama2.value + "', `aciklama3` = '" + aciklama3.value + "', `vergi_no` = '" + vergi_no.value + "', `iban` = '" + iban.value + "',`ozel_durum` = '" + ozel_durum.value + "' WHERE `musteri`.`id` = " + id + ";", (err, res) => {
+            var sql = "UPDATE `musteri` SET `ad` = '" + ad.value +
+                "', `soyad` = '" + soyad.value + "', `firma_ad` = '" + firma_ad.value + "', `tel1` = '" +
+                tel1.value + "', `tel2` = '" + tel2.value + "', `mail1` = '" + mail1.value +
+                "', `mail2` = '" + mail2.value + "', `adres1` = '" + adres1.value + "', `adres2` = '" +
+                adres2.value + "', `aciklama1` = '" + aciklama1.value + "', `aciklama2` = '" + aciklama2
+                .value + "', `aciklama3` = '" + aciklama3.value + "', `vergi_no` = '" + vergi_no.value +
+                "', `iban` = '" + iban.value + "',`ozel_durum` = '" + ozel_durum.value +
+                "' WHERE id = " + "'" + id + "'";
+            alert(sql);
+            baglanti.connection.query(sql, (err, res) => {
                 if (err) throw err;
                 console.log("Güncellendi");
             })
+            location.href = "./musteriYonetim.html";
         })
         let id = document.getElementById("ID");
         let ad = document.getElementById("ad");
@@ -78,7 +86,7 @@
             event.preventDefault();
             let id = document.getElementsByClassName("sec")[0].value;
             baglanti.connection.query("SELECT * FROM musteri WHERE id= " + id, (err, res) => {
-                id.value = res[0]['ID'];
+                id.value = res[0]['id'];
                 ad.value = res[0]['ad'];
                 soyad.value = res[0]['soyad'];
                 firma_ad.value = res[0]['firma_ad'];
@@ -102,11 +110,11 @@
             if (err) throw err;
             let dtList = document.getElementsByTagName("datalist")[0];
             for (i = 0; i < res.length; i++) {
-                dtList.innerHTML += "<option value='" + res[i]['ID'] + "'>" + res[i]['ad'] + " " + res[i]['soyad'] + "</option>";
+                dtList.innerHTML += "<option value='" + res[i]['id'] + "'>" + res[i]['ad'] + " " + res[i][
+                    'soyad'
+                ] + "</option>";
             }
         })
-
-
     </script>
 </body>
 
