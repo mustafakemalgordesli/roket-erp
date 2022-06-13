@@ -116,80 +116,78 @@
                         <div class="card">
                             <h5 class="card-header">PERSONEL EKLE</h5>
                             <div class="card-body">
-                                <form id="ekleme-formu">
+                                <hr>
+                                <form class="formDiv">
+                                    <input type="text" id="kullanici_adi" placeholder="Kullanıcı Adı">
+                                    <input type="text" id="bolum" placeholder="Bölüm">
                                     <hr>
-                                    <form class="formDiv">
-                                        <input type="text" id="kullanici_adi" placeholder="Kullanıcı Adı">
-                                        <input type="text" id="bolum" placeholder="Bölüm">
-                                        <hr>
-                                        <input type="text" placeholder="Ad" id="ad">
-                                        <input type="text" placeholder="Soyad" id="soyad">
-                                        <hr>
-                                        <input type="text" placeholder="Telefon" id="tel">
-                                        <input type="number" placeholder="TC" id="tc">
-                                        <hr>
-                                        <textarea class="form-control" name="adres" id="adres" cols="70"
-                                            rows="10">Adres...</textarea><br>
-                                        <input type="mail" placeholder="Mail" id="mail">
-                                        <hr>
-                                        Medeni Durum:
-                                        <select class="custom-select d-block w-100" name="medeni_durum"
-                                            id="medeni_durum">
-                                            <option value="Evli">Evli</option>
-                                            <option value="Bekar">Bekar</option>
-                                            <option value="Boşanmış">Boşanmış</option>
-                                        </select>
-                                        <hr>
-                                        Doğum Tarihi:
-                                        <div class="input-group date" data-target-input="nearest">
-                                            <input id="dogum_tarihi" type="text"
-                                                class="form-control datetimepicker-input" data-target="#dogum_tarihi" />
-                                            <div class="input-group-append" data-target="#dogum_tarihi"
-                                                data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                            </div>
+                                    <input type="text" placeholder="Ad" id="ad">
+                                    <input type="text" placeholder="Soyad" id="soyad">
+                                    <hr>
+                                    <input type="text" placeholder="Telefon" id="tel">
+                                    <input type="number" placeholder="TC" id="tc">
+                                    <hr>
+                                    <textarea class="form-control" name="adres" id="adres" cols="70"
+                                        rows="10">Adres...</textarea><br>
+                                    <input type="mail" placeholder="Mail" id="mail">
+                                    <hr>
+                                    Medeni Durum:
+                                    <select class="custom-select d-block w-100" name="medeni_durum" id="medeni_durum">
+                                        <option value="Evli">Evli</option>
+                                        <option value="Bekar">Bekar</option>
+                                        <option value="Boşanmış">Boşanmış</option>
+                                    </select>
+                                    <hr>
+                                    Doğum Tarihi:
+                                    <div class="input-group date" data-target-input="nearest">
+                                        <input id="dogum_tarihi" type="text" class="form-control datetimepicker-input"
+                                            data-target="#dogum_tarihi" />
+                                        <div class="input-group-append" data-target="#dogum_tarihi"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                         </div>
+                                    </div>
 
-                                        <hr>
-                                        Giriş Tarihi:
-                                        <div class="input-group date" data-target-input="nearest">
-                                            <input id="giris_tarihi" type="text"
-                                                class="form-control datetimepicker-input" data-target="#giris_tarihi" />
-                                            <div class="input-group-append" data-target="#giris_tarihi"
-                                                data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                            </div>
+                                    <hr>
+                                    Giriş Tarihi:
+                                    <div class="input-group date" data-target-input="nearest">
+                                        <input id="giris_tarihi" type="text" class="form-control datetimepicker-input"
+                                            data-target="#giris_tarihi" />
+                                        <div class="input-group-append" data-target="#giris_tarihi"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                         </div>
-                                        <hr>
-                                        Çıkış Tarihi:
-                                        <div class="input-group date" data-target-input="nearest">
-                                            <input id="cikis_tarihi" type="text"
-                                                class="form-control datetimepicker-input" data-target="#cikis_tarihi" />
-                                            <div class="input-group-append" data-target="#cikis_tarihi"
-                                                data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                            </div>
+                                    </div>
+                                    <hr>
+                                    Çıkış Tarihi:
+                                    <div class="input-group date" data-target-input="nearest">
+                                        <input id="cikis_tarihi" type="text" class="form-control datetimepicker-input"
+                                            data-target="#cikis_tarihi" />
+                                        <div class="input-group-append" data-target="#cikis_tarihi"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                         </div>
-                                        <hr>
-                                        Askerlik Durumu
-                                        <select class="custom-select d-block w-100" name="askerlik_durum"
-                                            id="askerlik_durum">
-                                            <option value="Yapıldı">Yapıldı</option>
-                                            <option value="Tecilli">Tecilli</option>
-                                            <option value="Muaf">Muaf</option>
-                                        </select>
-                                        <hr>
-                                        <textarea class="form-control" name="ozel_durum" id="ozel_durum" cols="70"
-                                            rows="10">Özel durum varsa buraya yazın...
+                                    </div>
+                                    <hr>
+                                    Askerlik Durumu
+                                    <select class="custom-select d-block w-100" name="askerlik_durum"
+                                        id="askerlik_durum">
+                                        <option value="Yapıldı">Yapıldı</option>
+                                        <option value="Tecilli">Tecilli</option>
+                                        <option value="Muaf">Muaf</option>
+                                    </select>
+                                    <hr>
+                                    <textarea class="form-control" name="ozel_durum" id="ozel_durum" cols="70"
+                                        rows="10">Özel durum varsa buraya yazın...
                                     </textarea>
-                                        <hr>Cinsiyet:
-                                        <select class="custom-select d-block w-100" name="cinsiyet" id="cinsiyet">
-                                            <option value="Kadın">Kadın</option>
-                                            <option value="Erkek">Erkek</option>
-                                        </select>
-                                        <hr>
-                                        <input type="submit" id="kaydet" value="Kaydet"><br>
-                                    </form>
+                                    <hr>Cinsiyet:
+                                    <select class="custom-select d-block w-100" name="cinsiyet" id="cinsiyet">
+                                        <option value="Kadın">Kadın</option>
+                                        <option value="Erkek">Erkek</option>
+                                    </select>
+                                    <hr>
+                                    <input type="submit" id="kaydet" value="Kaydet"><br>
+                                </form>
                             </div>
                         </div>
                     </div>
