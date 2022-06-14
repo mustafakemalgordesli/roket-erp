@@ -1,9 +1,19 @@
-const { app, BrowserWindow, ipcMain, Notification } = require('electron')
+const { app, BrowserWindow, ipcMain, Notification, remote, ipcRenderer } = require('electron')
 const path = require('path')
 const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
+const { electron } = require('process');
 
-var sonuc = [];
+var sonuc;
+
+ipcMain.on("veriYolla",(event,arg)=>{
+  sonuc=arg;
+  console.log(sonuc+" veriyolla")
+})
+ipcMain.on("veriCek",(event,arg)=>{
+  console.log(sonuc)
+  event.reply("veriCek",sonuc)
+})
 
 const result = veritabanıBaglan();
 if(result) {
@@ -69,14 +79,16 @@ ipcMain.on("stok", () => {
   indexPenceresi.hide();
 });
 
-ipcMain.on("veriYolla",(event,arg)=>{
-  sonuc=arg;
-  console.log(sonuc+" veriyolla")
-})
-ipcMain.on("veriCek",(event,arg)=>{
-  console.log(sonuc[0])
-  event.reply("veriCek",sonuc)
-})
+ipcMain.on("stokyonetim", () => {
+  win?.hide(); 
+  indexPenceresi?.hide(); 
+  personelPenceresi?.hide(); 
+  musteriPenceresi?.hide();
+  stokPenceresi?.hide();
+  stokSayfasiniOlusur();
+});
+
+
 
 ipcMain.on('auth-failed', () => {
   new Notification({ title: "Giriş Başarısız!", silent : false}).show()
