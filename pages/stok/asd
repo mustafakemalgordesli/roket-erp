@@ -42,15 +42,13 @@ function guncelle(){
                 //alert(sMiktar);
                 giren = document.getElementById("stok_giren").value;  
                 aciklama = document.getElementById("aciklama").value;
-                var sql="UPDATE `stok_takip` SET `miktar` = '"+sMiktar+"', `stok_giris` = CURRENT_TIMESTAMP(), `stok_giren` = '"+giren+"', `aciklama` = '"+aciklama+"' WHERE id ="+idd;
+                var sql="UPDATE `stok_takip` SET `miktar` = '"+sMiktar+"', `stok_giris` = CURRENT_TIMESTAMP(), `stok_giren` = '"+giren+"', `aciklama` = '"+aciklama+"' WHERE `stok_takip`.`id` = "+idd+"";
                 //alert(sql);
                 baglanti.connection.query(sql, (err, res) => {
                     if (err) throw err; 
                     alert("Stok Başarı ile EKLENDİ!!!")
+                    location.href="./stokYonetim.html" ;
                     document.getElementById("duzenleme-formu").reset();
-                    ipcRenderer.send("stokyonetim");
-                    // location.href="./stokYonetim.html" ;
-                    // location.reload("./stokYonetim.html");
                 })  
             }
         })    

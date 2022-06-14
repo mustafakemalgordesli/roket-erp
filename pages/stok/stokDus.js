@@ -46,8 +46,8 @@ function guncelledus(){
             baglanti.connection.query(sql, (err, res) => {
                 if (err) throw err; 
                 alert("Stok Başarı ile DÜŞÜRÜLDÜ!!!")
-                document.getElementById("duzenleme-formu1").reset();
                 location.href="./stokYonetim.html";
+                document.getElementById("duzenleme-formu1").reset();
                 })  
             }
         })    

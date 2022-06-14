@@ -22,7 +22,7 @@ async function yazdir(id) {
         if (err) throw err;
         if (res.length > 0) {
             ipcRenderer.send("veriYolla",res[0]["id"])
-            alert(id);            
+            //alert(id);            
         }
     });
 }
@@ -47,9 +47,8 @@ function guncelle(){
                 baglanti.connection.query(sql, (err, res) => {
                     if (err) throw err; 
                     alert("Stok Başarı ile EKLENDİ!!!")
-                    document.getElementById("duzenleme-formu").reset();
                     location.href="./stokYonetim.html" ;
-                    location.reload("./stokYonetim.html");
+                    document.getElementById("duzenleme-formu").reset();
                 })  
             }
         })    

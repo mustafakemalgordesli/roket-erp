@@ -73,9 +73,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="ekle1">Stok Ekle</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="stokListele">Stok Listele</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>  
@@ -103,7 +100,8 @@
                     </div>
                 </div>
                 <div class="card-body border-top">
-                    <input type="submit" id="ekle" value="Yeni Stok ekle" class="btn btn-primary">
+                    <input type="submit" id="ekle" value="Yeni Stok ekle" class="btn btn-primary">                    
+                    <button onclick="location.reload()" class="btn btn-primary">Sayfayı Yenile</button>
                 </div>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -157,7 +155,7 @@
     <script src="../assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
     <script src="../assets/vendor/charts/charts-bundle/chartjs.js"></script>
     <script src="../assets/libs/js/main-js.js"></script>
-    <script>
+    <script>   
         document.getElementById("ekle").addEventListener("click", () => {
             event.preventDefault();
             location.href = "./stokEkle.html";
@@ -165,10 +163,6 @@
         document.getElementById("ekle1").addEventListener("click", () => {
             event.preventDefault();
             location.href = "./stokEkle.html";
-        })
-        document.getElementById("stokListele").addEventListener("click", () => {
-            event.preventDefault();
-            location.href = "./stokListele.html";
         })
     </script>    
 
