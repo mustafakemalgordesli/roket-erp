@@ -16,12 +16,10 @@ function yonlendir1(id) {
     })
 }
 async function yazdir1(id) {
-    await yonlendir1(id);
-    var sonuc = []        
+    await yonlendir1(id);     
     baglanti.connection.query("SELECT * FROM stok_takip WHERE id= " + id, (err, res) => {
         if (err) throw err;
         if (res.length > 0) {
-            sonuc = res;
             ipcRenderer.send("veriYolla",res[0]["id"])
             
         }

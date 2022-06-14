@@ -3,6 +3,8 @@ const path = require('path')
 const mysql = require('mysql');
 const veritabanıBaglan = require('./veritabani-baglanti.js');
 
+var sonuc = [];
+
 const result = veritabanıBaglan();
 if(result) {
   console.log("başarısız");

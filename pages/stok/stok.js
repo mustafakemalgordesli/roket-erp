@@ -16,16 +16,13 @@ function yonlendir(id) {
     })
 }
 async function yazdir(id) {
-    await yonlendir(id);
-    var sonuc = []    
+    await yonlendir(id);   
     
     baglanti.connection.query("SELECT * FROM stok_takip WHERE id= " + id, (err, res) => {
         if (err) throw err;
         if (res.length > 0) {
-            sonuc = res;
             ipcRenderer.send("veriYolla",res[0]["id"])
-            //alert(id);
-            
+            alert(id);            
         }
     });
 }
@@ -51,7 +48,8 @@ function guncelle(){
                     if (err) throw err; 
                     alert("Stok Başarı ile EKLENDİ!!!")
                     document.getElementById("duzenleme-formu").reset();
-                    location.href="./stokYonetim.html";
+                    location.href="./stokYonetim.html" ;
+                    location.reload("./stokYonetim.html");
                 })  
             }
         })    

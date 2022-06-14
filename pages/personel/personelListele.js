@@ -21,13 +21,6 @@ function personelListele() {
                 checkbox_hucre.appendChild(isaret_kutu)
                 console.log(isaret_kutu);
                 //
-                let duzenle_hucre = row.insertCell(-1);
-                let duzenle = document.createElement("input");
-                duzenle.setAttribute("type", "submit");
-                duzenle.setAttribute("value", "Düzenle");
-                duzenle.setAttribute("onclick", "duzenleSayfa(" + res[i - 1]["id"] + ")")
-                duzenle_hucre.appendChild(duzenle);
-                //
 
             }
             let sil = document.createElement("input");
