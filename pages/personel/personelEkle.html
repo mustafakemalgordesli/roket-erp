@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="../assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <link rel="stylesheet" href="../assets/vendor/datepicker/tempusdominus-bootstrap-4.css" />
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <script src="./personelEkle.js"></script>
     <title>ROKET-ERP SOFTWAR-3</title>
 </head>
@@ -21,7 +23,7 @@
     <div class="dashboard-main-wrapper">
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand">ROKETerp</a>
+                <a class="navbar-brand" id="logo">ROKETerp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -83,7 +85,7 @@
                                 <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="./personelYonetimi.html">Personel Yönetimi</a>
+                                            <a class="nav-link" href="#">Personel Yönetimi</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -214,6 +216,10 @@
 
         })
 
+        document.getElementById("logo").addEventListener("click", () => {
+            event.preventDefault();
+            location.href = "../index.html";
+        })
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +11,9 @@
     <link rel="stylesheet" href="../assets/vendor/vector-map/jqvmap.css">
     <link rel="stylesheet" href="../assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <script src="./stoklistele.js"></script>
     <script src="./stokSil.js"></script>
     <title>ROKET-ERP SOFTWAR-3</title>
@@ -20,27 +23,35 @@
     <div class="dashboard-main-wrapper">
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand">ROKETerp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" id="logo">ROKETerp</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item dropdown connection">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
                                 <li class="connection-list">
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/github.png" alt="" > <span>Github</span></a>
+                                            <a href="#" class="connection-item"><img src="../assets/images/github.png"
+                                                    alt=""> <span>Github</span></a>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
-                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="../assets/images/avatar-1.jpg" alt=""
+                                    class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
@@ -58,7 +69,8 @@
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">İÇERİKLER</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -67,15 +79,17 @@
                                 Menu
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>STOK</a>
-                                <div id="submenu-3" class="collapse submenu" >
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-3" aria-controls="submenu-3"><i
+                                        class="fas fa-fw fa-chart-pie"></i>STOK</a>
+                                <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" id="ekle1">Stok Ekle</a>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>  
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -100,7 +114,7 @@
                     </div>
                 </div>
                 <div class="card-body border-top">
-                    <input type="submit" id="ekle" value="Yeni Stok ekle" class="btn btn-primary">                    
+                    <input type="submit" id="ekle" value="Yeni Stok ekle" class="btn btn-primary">
                     <button onclick="location.reload()" class="btn btn-primary">Sayfayı Yenile</button>
                 </div>
                 <div class="row">
@@ -116,16 +130,16 @@
                                                 <th class="border-0">Stok Tipi</th>
                                                 <th class="border-0">Miktar</th>
                                                 <th class="border-0">Giriş Tarihi</th>
-                                                <th class="border-0">Çıkış Tarihi</th> 
+                                                <th class="border-0">Çıkış Tarihi</th>
                                                 <th class="border-0">Stok Giren</th>
-                                                <th class="border-0">stok Çıkan</th>          
+                                                <th class="border-0">stok Çıkan</th>
                                                 <th class="border-0">Açıklama</th>
                                                 <th class="border-0">Sil</th>
                                                 <th class="border-0">Stok İşlem</th>
                                                 <th class="border-0">Stok İşlem</th>
                                             </tr>
                                         </thead>
-                                        <tbody>                             
+                                        <tbody>
                                         </tbody>
                                         <script>
                                             stokListele();
@@ -136,35 +150,40 @@
                         </div>
                     </div>
                 </div>
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">ROKETerp Yazılım çözümleri</a>
+                <div class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="text-md-right footer-links d-none d-sm-block">
+                                    <a href="javascript: void(0);">ROKETerp Yazılım çözümleri</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="../assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
-    <script src="../assets/vendor/charts/charts-bundle/chartjs.js"></script>
-    <script src="../assets/libs/js/main-js.js"></script>
-    <script>   
-        document.getElementById("ekle").addEventListener("click", () => {
-            event.preventDefault();
-            location.href = "./stokEkle.html";
-        })
-        document.getElementById("ekle1").addEventListener("click", () => {
-            event.preventDefault();
-            location.href = "./stokEkle.html";
-        })
-    </script>    
+        <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+        <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+        <script src="../assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+        <script src="../assets/vendor/charts/charts-bundle/chartjs.js"></script>
+        <script src="../assets/libs/js/main-js.js"></script>
+        <script>
+            document.getElementById("ekle").addEventListener("click", () => {
+                event.preventDefault();
+                location.href = "./stokEkle.html";
+            })
+            document.getElementById("ekle1").addEventListener("click", () => {
+                event.preventDefault();
+                location.href = "./stokEkle.html";
+            })
+
+            document.getElementById("logo").addEventListener("click", () => {
+                event.preventDefault();
+                location.href = "../index.html";
+            })
+        </script>
 
 </body>
 

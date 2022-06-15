@@ -21,6 +21,6 @@ function personelEkle() {
 
     baglanti.connection.query("INSERT INTO `personel` (`id`, `ad`, `soyad`, `tel`, `tc`, `adres`, `medeni_durum`, `mail`, `dogum_tarihi`, `kullanici_adi`, `giris_tarihi`, `cıkıs_tarihi`, `askerlik_durum`, `ozel_durum`, `cinsiyet`, `bolum`) VALUES (NULL, '" + ad + "', '" + soyad + "', '" + tel + "', '" + tc + "', '" + adres + "', '" + medeni + "', '" + mail + "', '" + dogum_tarihi + "', '" + kullanici_adi + "', '" + giris_tarihi + "', '" + cikis_tarihi + "', '" + askerlik + "', '" + ozel_durum + "', '" + cins + "', '" + bolum + "');", (err, res) => {
         if (err) throw err;
-        document.getElementById("ekleme-formu").reset();
+        location.href="./personelListele.html";
     })
 }

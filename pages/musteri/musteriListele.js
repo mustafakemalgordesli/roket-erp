@@ -3,7 +3,7 @@ var { yonlendir, duzenleF } = require('./musteriDuzenle')
 function musteriListele() {
     baglanti.connection.query("SELECT * FROM `musteri`", (err, res) => {
         if (err) throw err;
-        var filtre = [[1, "ID"], [3, "ad"], [4, "soyad"], [5, "firma_ad"], [6, "tel1"], [7, "tel2"], [8, "mail1"], [9, "mail2"], [10, "adres1"], [11, "adres2"], [12, "aciklama1"], [13, "aciklama2"], [14, "aciklama3"], [15, "vergi_no"], [16, "iban"]];
+        var filtre = [/*[1, "ID"],*/ [3, "ad"], [4, "soyad"], [5, "firma_ad"], [6, "tel1"], [7, "tel2"], [8, "mail1"], [9, "mail2"], [10, "adres1"], [11, "adres2"], [12, "aciklama1"], [13, "aciklama2"], [14, "aciklama3"], [15, "vergi_no"], [16, "iban"]];
         if (res.length > 0) {
             var table = document.getElementById("table");
             for (i = 1; i < res.length + 1; i++) {

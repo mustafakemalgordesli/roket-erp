@@ -22,7 +22,7 @@
     <div class="dashboard-main-wrapper">
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand">ROKETerp</a>
+                <a class="navbar-brand" id="logo">ROKETerp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -189,6 +189,11 @@
         let iban = document.getElementById("iban");
         document.getElementById("musteriyonetim").addEventListener("click", (event) => {
             location.href = "./musteriYonetim.html";
+        })
+
+        document.getElementById("logo").addEventListener("click", () => {
+            event.preventDefault();
+            location.href = "../index.html";
         })
 
         var baglanti = require('../../baglanti');

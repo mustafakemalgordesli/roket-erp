@@ -25,7 +25,7 @@
     <div class="dashboard-main-wrapper">
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="stokYonetimi.html">ROKETerp</a>
+                <a class="navbar-brand" href="#" id="logo">ROKETerp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -87,7 +87,7 @@
                                 <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="musteriyonetim">Müşteri Yönetimi</a>
+                                            <a class="nav-link" id="asd">Müşteri Yönetimi</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -128,7 +128,7 @@
                                     <table class="table" id="table">
                                         <thead class="bg-light">
                                             <tr class="border-0">
-                                                <th class="border-0">ID</th>
+                                                <!-- <th class="border-0">ID</th> -->
                                                 <th class="border-0">Ad</th>
                                                 <th class="border-0">Soyad</th>
                                                 <th class="border-0">Firma Adı</th>
@@ -171,16 +171,18 @@
         <script src="../assets/libs/js/main-js.js"></script>
         <script src="../assets/libs/js/dashboard-sales.js"></script>
         <script>
+            musteriListele()
             document.getElementById("musteriEkle").addEventListener("click", (event) => {
                 location.href = "./musteriEkle.html"
             })
-            document.getElementById("geri").addEventListener("click", (event) => {
+            document.getElementById("asd").addEventListener("click", (event) => {
                 event.preventDefault();
-                location.href = "./musteriYonetimi.html";
-            })
-            musteriListele();
-            document.getElementById("musteriyonetim").addEventListener("click", (event) => {
                 location.href = "./musteriYonetim.html";
+            })
+
+            document.getElementById("logo").addEventListener("click", () => {
+                event.preventDefault();
+                location.href = "../index.html";
             })
         </script>
 </body>
